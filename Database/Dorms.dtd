@@ -1,0 +1,9 @@
+<!ELEMENT database (item+)>
+        <!ELEMENT item EMPTY>
+        <!ATTLIST database NOWID #REQUIRED>
+        <!ATTLIST item id #REQUIRED>
+        <!ATTLIST item stat #REQUIRED>
+        <!ATTLIST item dormname #REQUIRED>
+        <!ATTLIST item remark #REQUIRED>
+        <!ATTLIST item org #REQUIRED>
+        <!ATTLIST item type #REQUIRED>
