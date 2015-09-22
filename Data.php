@@ -71,7 +71,7 @@ function userLogin()
         ));
         return;
     }
-    if ($username == 'admin' && $password == 'admin') {
+    if ($username == 'huying' && $password == '890824') {
         /*记录session值并写入cookie*/
         setcookie('SSID', session_id(),time()+43200);
         $_SESSION['stat'] = 'login';

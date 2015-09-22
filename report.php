@@ -44,7 +44,6 @@ $tasks = $Kodbc->getById($taskid);
         if($tasks['stat']!=0){/*表示查寝还可能还在进行，则需要刷新结果集*/
             $_temp_status='ok';//表示已经好了
             foreach($finalRes as $key => $val){
-                var_dump(substr($val,0,stripos($val,'::')));
                 if(substr($val,0,stripos($val,'::'))==''){
                     /*检测到有未完成项就跳出*/
                     $_temp_status = 'bug';//设置标志位
@@ -101,7 +100,7 @@ $tasks = $Kodbc->getById($taskid);
         </script>
     </div>
     <div class="panel-body">
-        <button type="button" class="btn btn-success pull-right" onclick="confirm('还有寝室没有检查完，是否确认导出？')">导出查寝结果报告</button>
+        <button type="button" class="btn btn-success pull-right" onclick="if(confirm('是否确认导出？'))location = './tools/fileExport.php?taskid=<?php echo $taskid?>'">导出查寝结果报告</button>
     </div>
 </div>
 
