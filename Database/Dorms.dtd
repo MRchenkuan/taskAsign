@@ -5,5 +5,4 @@
         <!ATTLIST item stat #REQUIRED>
         <!ATTLIST item dormname #REQUIRED>
         <!ATTLIST item remark #REQUIRED>
-        <!ATTLIST item org #REQUIRED>
         <!ATTLIST item type #REQUIRED>

@@ -69,6 +69,7 @@ foreach($allDroms as $dormid){
         default:$Grad=$remarkVal[0];break;
     }
     $Remark = substr($dormGrad,stripos($dormGrad,'::')+2);
+    if(!$Remark)$Remark='无';
 
     $dormRes = array(
         substr($dormname,0,stripos($dormname,'-')),//楼栋
@@ -130,7 +131,6 @@ foreach($finalRes as $item){
                 case $remarkVal[0]:$getStyle->getFill()->getStartColor()->setARGB('FF777777');break;
                 default:break;
             }
-//            $getStyle->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
         }
 
     }
@@ -139,6 +139,7 @@ foreach($finalRes as $item){
 
 /*设置成员列(E列)为自动*/
 $resultPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+$resultPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
 
 //设置导出文件名
 $outputFileName = $tableTitle.'.xls';
