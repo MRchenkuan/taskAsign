@@ -1,0 +1,8 @@
+<!ELEMENT database (item+)>
+        <!ELEMENT item EMPTY>
+        <!ATTLIST database NOWID #REQUIRED>
+        <!ATTLIST item id #REQUIRED>
+        <!ATTLIST item dpt #REQUIRED>
+        <!ATTLIST item cls #REQUIRED>
+        <!ATTLIST item mbr #REQUIRED>
+        <!ATTLIST item ldr #REQUIRED>
