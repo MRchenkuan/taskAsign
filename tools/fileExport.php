@@ -138,8 +138,9 @@ foreach($finalRes as $item){
 }
 
 /*设置成员列(E列)为自动*/
-$resultPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
 $resultPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
+$resultPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+$resultPHPExcel->getActiveSheet()->getColumnDimension('H')->setAutoSize(true);
 
 //设置导出文件名
 $outputFileName = $tableTitle.'.xls';

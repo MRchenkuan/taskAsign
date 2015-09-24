@@ -86,21 +86,24 @@ $result = json_decode($subTask['result']); ?>
                 </div>
                 <hr style="margin: 10px 0;">
                 <div id="remarkgrad" data-grad="2" class="btn-group btn-group-lg" role="group" aria-label="...">
-                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',1,this.innerHTML);" class="btn-lg btn btn-success">优秀</button>
-                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',2,this.innerHTML);" class="btn-lg btn btn-info">良好</button>
-                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',3,this.innerHTML);" class="btn-lg btn btn-warning">中等</button>
-                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',4,this.innerHTML);" class="btn-lg btn btn-danger">差劲</button>
+                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',1,this);" class="btn-lg btn btn-success">优秀</button>
+                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',2,this);" class="btn-lg btn btn-info">良好</button>
+                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',3,this);" class="btn-lg btn btn-warning">中等</button>
+                    <button type="button" onclick="conmitDromRemark('<?php echo $subTaskId?>',4,this);" class="btn-lg btn btn-danger">差劲</button>
                 </div>
 
 
             </div>
             <div class="modal-footer">
                 <script>
-                    function conmitDromRemark(subtaskid,grad,gradText){
+                    function conmitDromRemark(subtaskid,grad,thisnode){
+                        var gradText = thisnode.innerHTML;
+                        var btngroup = thisnode.parentNode;
                         var res = document.getElementById('remarkBordTitle');
                         var remark =document.getElementById('remarktext').value;
                         var notice = '你确定'+res.innerHTML+" >>"+gradText+'<< ?\n\n报告：'+((remark=='')?'无':remark);
                         if(confirm(notice)){
+                            btngroup.innerHTML='正折小纸条...';
                             $.ajax({
                                 url:'Data.php?id=subTaskRemark',
                                 type:'GET',
@@ -113,14 +116,15 @@ $result = json_decode($subTask['result']); ?>
                                 success:function(data){
                                     data = eval('(' + data + ')');
                                     console.log(data);
-                                    if (data.stat == 200) {
-                                        alert(data.msg);
-                                        location.reload();
-                                    }
+                                    alert(data.msg);
+                                    btngroup.innerHTML='老师正在阅读小纸条,请稍等...';
+                                    location.reload();
                                 },
                                 error:function(data){
                                     data = eval('(' + data + ')');
                                     console.log(data);
+                                    btngroup.innerHTML='小纸条被不明力场拦截了,稍等,我刷新完再发一次吧...';
+                                    location.reload();
                                 }
                             })
                         }else{

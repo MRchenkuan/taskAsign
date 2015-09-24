@@ -93,9 +93,17 @@ for($i=0;$i<count($dorms);$i++){
                            data-qrsrc = "excuteTask.php?subtaskid=<?php echo $items['id']?>"
                            data-content="">
                             <div class="qrcode"></div>
-                            <span class="glyphicon glyphicon-list-alt"></span>&nbsp;生成二维码
+                            <span class="glyphicon glyphicon-picture"></span>&nbsp;生成二维码
                         </a>
-                        <a target=_blank href = './excuteTask.php?subtaskid=<?php echo $items['id']?>'>任务链接</a>
+                        <a tabindex="0" role="button" type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top"
+                           data-id="<?php echo $items['id']?>"
+                           data-title="<?php echo $items['trustee']?> 的任务链接"
+                           data-html="true"
+                           data-qrsrc = "excuteTask.php?subtaskid=<?php echo $items['id']?>"
+                           data-content=""
+                            onmouseover="var clpLinkSrc=location.href.split('distribute.php')[0]+'excuteTask.php?subtaskid=<?php echo $items['id']?>';this.setAttribute('data-content','<a _target=\'blank\' style=\'word-break: break-all\' href=\''+clpLinkSrc+'\'>'+clpLinkSrc+'</a>')">
+                            <span class="glyphicon glyphicon-link"></span>&nbsp;生成任务连接
+                        </a>
                     </td>
                 </tr>
 

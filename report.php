@@ -13,7 +13,7 @@ $tasks = $Kodbc->getById($taskid);
 
 ?>
     <div class="page-header" style="width: 960px;margin: 60px auto 0 auto">
-        <h1>结果报告 <small>实时查请结果展示<span class="label label-warning"><?php echo '('.$tasks['id'].') '.$tasks['update'] ?></span></small></h1>
+        <h1>结果报告 <small>查寝情况展示<span class="label label-warning"><?php echo '('.$tasks['id'].') '.$tasks['update'] ?></span></small></h1>
     </div>
 <div class="panel center-block panel-default" style="width: 960px;">
     <div class="panel-heading">
