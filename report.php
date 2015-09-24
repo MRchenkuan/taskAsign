@@ -44,7 +44,7 @@ $tasks = $Kodbc->getById($taskid);
         if($tasks['stat']!=0){/*表示查寝还可能还在进行，则需要刷新结果集*/
             $_temp_status='ok';//表示已经好了
             foreach($finalRes as $key => $val){
-                if(substr($val,0,stripos($val,'::'))==''){
+                if(substr($val,0,stripos($val,'::'))==''||substr($val,0,stripos($val,'::'))=='0'){
                     /*检测到有未完成项就跳出*/
                     $_temp_status = 'bug';//设置标志位
                     break;
