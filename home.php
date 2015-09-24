@@ -39,7 +39,7 @@ $pageCount = ceil($count/$pagesize);//总页数
         <div class="panel-heading">历史查寝记录</div>
         <div class="panel-body">
             <p>下表中是之前所有查过寝的记录</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-placement="top" title="编辑图片" data-target="#taskEditor">新增查寝任务</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-placement="top" title="编辑图片" data-target="#taskEditor"><span class="glyphicon glyphicon-plus"></span> 新增查寝任务</button>
 
         </div>
 
@@ -63,13 +63,13 @@ $pageCount = ceil($count/$pagesize);//总页数
                                 class="btn btn-success"
                                 onclick="location='./distribute.php?taskid=<?php echo $items['id']?>'"
                                 data-id="<?php echo $items['id']?>">
-                            <span class="glyphicon glyphicon-list-alt"></span>&nbsp;分配查寝任务
+                            <span class="glyphicon glyphicon-tasks"></span>&nbsp;分配查寝任务
                         </button>
                 <?php } ?>
                     <button type="button"
                             class="btn btn-primary"
                             onclick="location='./report.php?taskid=<?php echo $items['id']?>'">
-                        <span class="glyphicon glyphicon-list-alt"></span>&nbsp;查看结果报告
+                        <span class="glyphicon glyphicon-blackboard"></span>&nbsp;查看结果报告
                     </button>
                 </td>
             </tr>

@@ -59,7 +59,7 @@ for($i=0;$i<count($dorms);$i++){
         <div class="panel-heading">待查寝室</div>
         <div class="panel-body">
             <p>下面是分配的查寝者</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-placement="top" title="新增子任务" data-target="#taskEditor">新增子任务</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-placement="top" title="新增子任务" data-target="#taskEditor"><span class="glyphicon glyphicon-plus"></span> 新增子任务</button>
 
         </div>
         <script src="js/tools.js"></script>
@@ -93,7 +93,7 @@ for($i=0;$i<count($dorms);$i++){
                            data-qrsrc = "excuteTask.php?subtaskid=<?php echo $items['id']?>"
                            data-content="">
                             <div class="qrcode"></div>
-                            <span class="glyphicon glyphicon-picture"></span>&nbsp;生成二维码
+                            <span class="glyphicon glyphicon-qrcode"></span>&nbsp;生成二维码
                         </a>
                         <a tabindex="0" role="button" type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top"
                            data-id="<?php echo $items['id']?>"

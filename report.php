@@ -13,7 +13,7 @@ $tasks = $Kodbc->getById($taskid);
 
 ?>
     <div class="page-header" style="width: 960px;margin: 60px auto 0 auto">
-        <h1>结果报告 <small>查寝情况展示<span class="label label-warning"><?php echo '('.$tasks['id'].') '.$tasks['update'] ?></span></small></h1>
+        <h1>结果报告 <small>查寝情况展示 <span class="label label-warning"><?php echo '('.$tasks['id'].') '.$tasks['update'] ?></span></small></h1>
     </div>
 <div class="panel center-block panel-default" style="width: 960px;">
     <div class="panel-heading">
@@ -100,7 +100,7 @@ $tasks = $Kodbc->getById($taskid);
         </script>
     </div>
     <div class="panel-body">
-        <button type="button" class="btn btn-success pull-right" onclick="if(confirm('是否确认导出？'))location = './tools/fileExport.php?taskid=<?php echo $taskid?>'">导出查寝结果报告</button>
+        <button type="button" class="btn btn-success pull-right" onclick="if(confirm('是否确认导出？'))location = './tools/fileExport.php?taskid=<?php echo $taskid?>'"><span class="glyphicon glyphicon-print"></span> 导出查寝结果报告</button>
     </div>
 </div>
 
