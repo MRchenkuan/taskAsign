@@ -86,7 +86,7 @@ $tasks = $Kodbc->getById($taskid);
                     default : ?> class="label label-default" <?php ;break;
                   } ?> style="float:left;border:1px solid grey;margin: 5px;padding: 15px;">
                     <?php if($remark&&$remark!=''){?>
-                        <span class="glyphicon glyphicon-exclamation-sign" style="margin-top: -2px"> </span>
+                        <span class="glyphicon glyphicon-exclamation-sign" style="margin: -7.5px;top:-12px;right: -48px;"> </span>
                     <?php } echo $dorm['dormname'];?></span>
         <?php } ?>
 
