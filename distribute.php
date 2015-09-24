@@ -101,8 +101,8 @@ for($i=0;$i<count($dorms);$i++){
                            data-html="true"
                            data-qrsrc = "excuteTask.php?subtaskid=<?php echo $items['id']?>"
                            data-content=""
-                            onmouseover="var clpLinkSrc=location.href.split('distribute.php')[0]+'excuteTask.php?subtaskid=<?php echo $items['id']?>';this.setAttribute('data-content','<a _target=\'blank\' style=\'word-break: break-all\' href=\''+clpLinkSrc+'\'>'+clpLinkSrc+'</a>')">
-                            <span class="glyphicon glyphicon-link"></span>&nbsp;生成任务连接
+                            onmouseover="var clpLinkSrc=location.href.split('distribute.php')[0]+'excuteTask.php?subtaskid=<?php echo $items['id']?>';this.setAttribute('data-content','<a target=\'_blank\' style=\'word-break: break-all\' href=\''+clpLinkSrc+'\'>'+clpLinkSrc+'</a>')">
+                            <span class="glyphicon glyphicon-link"></span>&nbsp;生成任务链接
                         </a>
                     </td>
                 </tr>

@@ -64,26 +64,36 @@ $tasks = $Kodbc->getById($taskid);
             /*判断得分并分割评价*/
             if($val=='0'){
                 $grad = 0;
-                $remark = '';
+                $remark='';
             }else{
                 $grad = substr($val,0,stripos($val,'::'));
                 $remark = substr($val,stripos($val,'::')+2);
             }
             ?>
-            <span data-grad="<?php echo $grad ?>" data-rmk="<?php echo $remark ?>"
-            <?php switch($grad){
-                case '1': ?> class="label label-success" <?php ;break;
-                case '2': ?> class="label label-info" <?php ;break;
-                case '3': ?> class="label label-warning" <?php ;break;
-                case '4': ?> class="label label-danger" <?php ;break;
-                default : ?> class="label label-default" <?php ;break;
-            } ?> style="float:left;border:1px solid grey;margin: 5px;padding: 15px;">
-                <?php echo $dorm['dormname'] ?>
-            </span>
-        <?php
-        }
-        ?>
+            <span data-grad="<?php echo $grad ?>"
+                  data-rmk="<?php echo $remark ?>"
+                  <?php if($remark&&$remark!=''){?>
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="<?php echo $remark?>"
+                  <?php };
+
+                  switch($grad){
+                    case '1': ?> class="label label-success" <?php ;break;
+                    case '2': ?> class="label label-info" <?php ;break;
+                    case '3': ?> class="label label-warning" <?php ;break;
+                    case '4': ?> class="label label-danger" <?php ;break;
+                    default : ?> class="label label-default" <?php ;break;
+                  } ?> style="float:left;border:1px solid grey;margin: 5px;padding: 15px;">
+                    <?php if($remark&&$remark!=''){?>
+                        <span class="glyphicon glyphicon-exclamation-sign" style="margin-top: -2px"> </span>
+                    <?php } echo $dorm['dormname'];?></span>
+        <?php } ?>
+
         <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
             var field = [];
             var title = ['还未检查','优秀','良好','中等','差劲'];
             var grads = ['0','1','2','3','4'];
